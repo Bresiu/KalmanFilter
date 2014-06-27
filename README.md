@@ -24,7 +24,7 @@ Constants.MIN_ACCURACY
 ```
 to value which fits your needs.
 
-Smaller the value is -> Kalman filter algorithm has less impact on the final data. 
+Smaller the value is -> Kalman filter algorithm has less impact to the final data. 
 
 with format:
 

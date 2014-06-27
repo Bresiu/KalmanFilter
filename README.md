@@ -14,18 +14,6 @@ Input:
 ```bash
 lon_lat.dat file
 ```
-
-Adjusting accuracy:
-----------
-
-Adjust:
-```bash
-Constants.MIN_ACCURACY
-```
-to value which fits your needs.
-
-Smaller the value is -> Kalman filter algorithm has less impact to the final data. 
-
 with format:
 
     No | speed[m/s] | latitide | longitude | timestamp [millis]
@@ -38,6 +26,16 @@ with format:
     .
     .
 
+Adjusting accuracy:
+----------
+
+Adjust:
+```bash
+Constants.MIN_ACCURACY
+```
+to value which fits your needs.
+Smaller the value is -> Kalman filter algorithm has less impact to the final data. 
+
 Output:
 -------
 
@@ -48,7 +46,7 @@ new_lon_lat.dat
 Usage with [gnuplot]:
 ---------------------
 
-Old chart:
+Old chart (Some points have been intentionally modified to simulate incorrect data):
 ```bash
 plot "lon_lat.dat" using 3:4 w l
 ```

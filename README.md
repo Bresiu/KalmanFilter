@@ -11,9 +11,20 @@ Dependiences
 Input:
 ------
 
-```
+```bash
 lon_lat.dat file
 ```
+
+Adjusting accuracy:
+----------
+
+Adjust:
+```bash
+Constants.MIN_ACCURACY
+```
+to value which fits your needs.
+
+Smaller the value is -> Kalman filter algorithm has less impact on the final data. 
 
 with format:
 
@@ -30,7 +41,7 @@ with format:
 Output:
 -------
 
-```
+```bash
 new_lon_lat.dat
 ```
 

@@ -37,7 +37,7 @@ public class KalmanFilter {
 
     /**
      * Kalman filter processing for latitude and longitude
-     * <p/>
+     *
      * newLatitude - new measurement of latitude
      * newLongitude - new measurement of longitude
      * accuracy - measurement of 1 standard deviation error in meters

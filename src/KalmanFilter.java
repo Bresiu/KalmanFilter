@@ -53,10 +53,10 @@ public class KalmanFilter {
             setState(newLatitude, newLongitude, newTimeStamp, newAccuracy);
         } else {
             // else apply Kalman filter
-            long timestamp = newTimeStamp - this.timeStamp;
-            if (timestamp > 0) {
+            long duration = newTimeStamp - this.timeStamp;
+            if (duration > 0) {
                 // time has moved on, so the uncertainty in the current position increases
-                variance += timestamp * newSpeed * newSpeed / 1000;
+                variance += duration * newSpeed * newSpeed / 1000;
                 timeStamp = newTimeStamp;
             }
 
@@ -67,11 +67,11 @@ public class KalmanFilter {
             // apply 'k'
             latitude += k * (newLatitude - latitude);
             longitude += k * (newLongitude - longitude);
-            // new Covariance matrix is (IdentityMatrix - k) * Covarariance
+            // new Covariance matrix is (IdentityMatrix - k) * Covariance
             variance = (1 - k) * variance;
 
             // Export new point
-            exportNewPoint(newSpeed, longitude, latitude, timestamp);
+            exportNewPoint(newSpeed, longitude, latitude, duration);
         }
     }
 

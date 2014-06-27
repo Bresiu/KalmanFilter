@@ -1,9 +1,8 @@
 import com.google.common.eventbus.Subscribe;
 
 public class KalmanFilter {
-    private final float MIN_ACCURACY = 1f;
 
-    private float speed; // meters per second
+
     private long timeStamp; // millis
     private double latitude; // degree
     private double longitude; // degree
@@ -22,13 +21,12 @@ public class KalmanFilter {
     public void onLocationUpdate(GPSSingleData singleData) {
         // if gps receiver is able to return 'accuracy' of position, change last variable
         process(singleData.getSpeed(), singleData.getLatitude(), singleData.getLongitude(), singleData.getTimestamp(),
-                MIN_ACCURACY);
+                Constants.MIN_ACCURACY);
     }
 
     // Init method (use this after constructor, and before process)
     // if you are using last known data from gps)
     public void setState(float speed, double latitude, double longitude, long timeStamp, float accuracy) {
-        this.speed = speed;
         this.latitude = latitude;
         this.longitude = longitude;
         this.timeStamp = timeStamp;
@@ -44,9 +42,10 @@ public class KalmanFilter {
      * newTimeStamp - time of measurement in millis
      */
     public void process(float newSpeed, double newLatitude, double newLongitude, long newTimeStamp, float newAccuracy) {
-        if (newAccuracy < MIN_ACCURACY) {
-            newAccuracy = MIN_ACCURACY;
-        }
+        // Uncomment this, if you are receiving accuracy from your gps
+        // if (newAccuracy < Constants.MIN_ACCURACY) {
+        //      newAccuracy = Constants.MIN_ACCURACY;
+        // }
         if (variance < 0) {
             // if variance < 0, object is unitialised, so initialise with current values
             setState(newSpeed, newLatitude, newLongitude, newTimeStamp, newAccuracy);

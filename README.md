@@ -30,11 +30,11 @@ Usage with [gnuplot]:
 ---------------------
 
 Old chart:
-
+```bash
     plot "lon_lat.dat" using 3:4 w l
-    
+ ``` 
 New chart:
-
+```bash
     plot "new_lon_lat.dat" using 2:3 w l
-
+```
 [gnuplot]:http://www.gnuplot.info/

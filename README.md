@@ -6,7 +6,9 @@ Testing Kalman Filter for GPS data
 Input:
 ------
 
-```lon_lat.dat file```
+```
+lon_lat.dat file
+```
 
 with format:
 
@@ -23,7 +25,9 @@ with format:
 Output:
 -------
 
-```new_lon_lat.dat```
+```
+new_lon_lat.dat
+```
 
 
 Usage with [gnuplot]:

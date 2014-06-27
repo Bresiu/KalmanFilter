@@ -34,7 +34,6 @@ Adjust:
 Constants.MIN_ACCURACY
 ```
 to value which fits your needs.
-
 Smaller the value is -> Kalman filter algorithm has less impact to the final data. 
 
 Output:
@@ -47,7 +46,7 @@ new_lon_lat.dat
 Usage with [gnuplot]:
 ---------------------
 
-Old chart:
+Old chart (Some points have been intentionally modified to simulate incorrect data):
 ```bash
 plot "lon_lat.dat" using 3:4 w l
 ```

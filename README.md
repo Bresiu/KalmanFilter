@@ -23,9 +23,9 @@ No | speed[m/s] | latitide | longitude | timestamp [millis]
 Output:
 -------
 
-new_lon_lat.dat
+```new_lon_lat.dat```
 
-Usage with 'gnuplot':
+Usage with ```gnuplot```:
 
 ```plot "lon_lat.dat" using 3:4 w l```
 

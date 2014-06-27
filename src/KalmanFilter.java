@@ -2,7 +2,6 @@ import com.google.common.eventbus.Subscribe;
 
 public class KalmanFilter {
 
-
     private long timeStamp; // millis
     private double latitude; // degree
     private double longitude; // degree

@@ -7,6 +7,8 @@ public class GPSDataFactory {
     private List<String> gpsDataLines;
     private EventBus bus;
 
+    private final long SLEEP_TIME = 1000;
+
     public GPSDataFactory() {
         Importer importer = new Importer();
         gpsDataLines = importer.readData();
@@ -25,13 +27,8 @@ public class GPSDataFactory {
                     GPSSingleData gpsSingleData = proccessLine(string);
                     bus.post(gpsSingleData);
 
-                    /*
                     // Simulate GPS intervals
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }*/
+                    // pauseThread(SLEEP_TIME);
                 }
             }
         };
@@ -42,5 +39,13 @@ public class GPSDataFactory {
         String[] gpsParts = gpsLine.split(" ");
         return new GPSSingleData(Float.valueOf(gpsParts[1]), Double.valueOf(gpsParts[2]),
                 Double.valueOf(gpsParts[3]), Long.valueOf(gpsParts[4]));
+    }
+
+    private void pauseThread(long sleepTime) {
+        try {
+            Thread.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

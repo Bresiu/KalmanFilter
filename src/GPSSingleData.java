@@ -15,11 +15,11 @@ public class GPSSingleData {
         return speed;
     }
 
-    public double getLon() {
+    public double getLongitude() {
         return lon;
     }
 
-    public double getLat() {
+    public double getLatitude() {
         return lat;
     }
 

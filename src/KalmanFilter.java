@@ -7,7 +7,10 @@ public class KalmanFilter {
     private double longitude; // degree
     private float variance; // P matrix. Initial estimate of error
 
+    private Exporter exporter;
+
     public KalmanFilter() {
+        exporter = new Exporter();
         registerBus();
         variance = -1;
     }
@@ -67,14 +70,13 @@ public class KalmanFilter {
             // new Covariance matrix is (IdentityMatrix - k) * Covarariance
             variance = (1 - k) * variance;
 
-            // Export new points
+            // Export new point
             exportNewPoint(newSpeed, longitude, latitude, timestamp);
         }
     }
 
     private void exportNewPoint(float speed, double longitude, double latitude, long timestamp) {
         GPSSingleData newGPSdata = new GPSSingleData(speed, longitude, latitude, timestamp);
-        Exporter exporter = new Exporter();
         exporter.writeData(newGPSdata.toString());
     }
 }

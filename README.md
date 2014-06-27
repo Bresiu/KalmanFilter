@@ -11,9 +11,20 @@ Dependiences
 Input:
 ------
 
-```
+```bash
 lon_lat.dat file
 ```
+
+Adjusting accuracy:
+----------
+
+Adjust:
+```bash
+Constants.MIN_ACCURACY
+```
+to value which fits your needs.
+
+Smaller the value is -> Kalman filter algorithm has less impact on the final data. 
 
 with format:
 
@@ -30,7 +41,7 @@ with format:
 Output:
 -------
 
-```
+```bash
 new_lon_lat.dat
 ```
 
@@ -40,9 +51,13 @@ Usage with [gnuplot]:
 Old chart:
 ```bash
 plot "lon_lat.dat" using 3:4 w l
-``` 
+```
+![alt tag](https://raw.githubusercontent.com/Bresiu/KalmanFilter/master/charts/old.png)
+
 New chart:
 ```bash
 plot "new_lon_lat.dat" using 2:3 w l
 ```
+![alt tag](https://raw.githubusercontent.com/Bresiu/KalmanFilter/master/charts/new.png)
+
 [gnuplot]:http://www.gnuplot.info/

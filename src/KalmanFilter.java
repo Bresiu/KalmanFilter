@@ -5,7 +5,7 @@ public class KalmanFilter {
     private long timeStamp; // millis
     private double latitude; // degree
     private double longitude; // degree
-    private float variance; // P matrix. Initial
+    private float variance; // P matrix. Initial estimate of error
 
     public KalmanFilter() {
         registerBus();

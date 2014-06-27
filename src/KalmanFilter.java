@@ -25,7 +25,7 @@ public class KalmanFilter {
 
     // Init method (use this after constructor, and before process)
     // if you are using last known data from gps)
-    public void setState(float speed, double latitude, double longitude, long timeStamp, float accuracy) {
+    public void setState(double latitude, double longitude, long timeStamp, float accuracy) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.timeStamp = timeStamp;
@@ -47,7 +47,7 @@ public class KalmanFilter {
         // }
         if (variance < 0) {
             // if variance < 0, object is unitialised, so initialise with current values
-            setState(newSpeed, newLatitude, newLongitude, newTimeStamp, newAccuracy);
+            setState(newLatitude, newLongitude, newTimeStamp, newAccuracy);
         } else {
             // else apply Kalman filter
             long timestamp = newTimeStamp - this.timeStamp;

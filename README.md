@@ -40,9 +40,13 @@ Usage with [gnuplot]:
 Old chart:
 ```bash
 plot "lon_lat.dat" using 3:4 w l
-``` 
+```
+![alt tag](https://raw.githubusercontent.com/Bresiu/KalmanFilter/master/charts/old.png)
+
 New chart:
 ```bash
 plot "new_lon_lat.dat" using 2:3 w l
 ```
+![alt tag](https://raw.githubusercontent.com/Bresiu/KalmanFilter/master/charts/new.png)
+
 [gnuplot]:http://www.gnuplot.info/
